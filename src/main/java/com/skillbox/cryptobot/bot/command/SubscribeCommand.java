@@ -9,8 +9,9 @@ import org.telegram.telegrambots.meta.bots.AbsSender;
 /**
  * Обработка команды подписки на курс валюты
  */
-@Service
+
 @Slf4j
+@Service
 public class SubscribeCommand implements IBotCommand {
 
     @Override

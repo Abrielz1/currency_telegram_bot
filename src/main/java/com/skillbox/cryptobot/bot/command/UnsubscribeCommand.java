@@ -10,8 +10,9 @@ import org.telegram.telegrambots.meta.bots.AbsSender;
 /**
  * Обработка команды отмены подписки на курс валюты
  */
-@Service
+
 @Slf4j
+@Service
 @AllArgsConstructor
 public class UnsubscribeCommand implements IBotCommand {
 

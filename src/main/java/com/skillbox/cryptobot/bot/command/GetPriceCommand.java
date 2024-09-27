@@ -11,10 +11,12 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.bots.AbsSender;
 
 /**
+
  * Обработка команды получения текущей стоимости валюты
  */
-@Service
+
 @Slf4j
+@Service
 @AllArgsConstructor
 public class GetPriceCommand implements IBotCommand {
 

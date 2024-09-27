@@ -6,16 +6,13 @@ import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.IBotCommand;
 import org.telegram.telegrambots.meta.api.objects.Update;
-
 import java.util.List;
 
-
-@Service
 @Slf4j
+@Service
 public class CryptoBot extends TelegramLongPollingCommandBot {
 
     private final String botUsername;
-
 
     public CryptoBot(
             @Value("${telegram.bot.token}") String botToken,
