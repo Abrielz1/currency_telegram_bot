@@ -21,7 +21,6 @@ public class BinanceClient {
 
     private final HttpClient httpClient;
 
-
     public BinanceClient(@Value("${binance.api.getPrice}") String uri) { //constructor
         httpGet = new HttpGet(uri); // receiving by uri via Get
         mapper = new ObjectMapper();

@@ -38,7 +38,7 @@ public class Subscribers {
     Long telegramUserId;
 
     @Column(name = "user_subscribed_bitcoin_price")
-    Long userSubscribedBitCoinPrice;
+    Double userSubscribedBitCoinPrice;
 
     @Override
     public final boolean equals(Object o) {

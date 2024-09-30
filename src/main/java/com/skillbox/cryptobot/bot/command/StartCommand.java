@@ -42,11 +42,12 @@ public class StartCommand implements IBotCommand {
                 Привет! Данный бот помогает отслеживать стоимость биткоина.
                 Поддерживаемые команды:
                  /get_price - получить стоимость биткоина
+                 /subscribe[пробел][ваше число] - получать стоимость биткоина в USD
                 """);
 
         try {
 
-            if (!repository.existsByAndTelegramUserId(message.getFrom().getId())) {
+            if (!repository.existsByTelegramUserId(message.getFrom().getId())) {
                 repository.save(this.createNewSubscriber(message));
             }
 
