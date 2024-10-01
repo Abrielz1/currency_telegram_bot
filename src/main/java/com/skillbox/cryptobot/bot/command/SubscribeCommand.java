@@ -54,7 +54,7 @@ public class SubscribeCommand implements IBotCommand {
         String bitCoinWishedPriceRAW = message.getText();
 
         priceOfBitCoin = this.bitCoinPriceParser(priceOfBitCoin,
-                                                 bitCoinWishedPriceRAW);
+                bitCoinWishedPriceRAW);
 
         answer.setText("""
                 Новая подписка создана на стоимость %f USD
@@ -62,8 +62,7 @@ public class SubscribeCommand implements IBotCommand {
                 """.formatted(priceOfBitCoin));
 
         Subscribers userToSubscribe = currencyRepository.findFirstByTelegramUserId(message.getFrom().getId())
-                .orElse(this.createNewUser(message.getFrom().getId(),
-                        null));
+                .orElse(this.createNewUser(message.getFrom().getId()));
 
         userToSubscribe.setUserSubscribedBitCoinPrice(priceOfBitCoin);
 
@@ -77,22 +76,23 @@ public class SubscribeCommand implements IBotCommand {
     }
 
     private Double bitCoinPriceParser(Double currentBitcoinPrice, String text) {
-        String[] spitText = text.split("\\s+");
 
-         if (spitText.length == 1) {
-             return currentBitcoinPrice;
-         } else {
-             return Double.parseDouble(spitText[1].replaceAll("[^0-9.]+", ""));
-         }
+        if (text.isBlank() || !text.contains("\\d")) {
+
+            return currentBitcoinPrice;
+        } else {
+
+            return Double.parseDouble(text.replaceAll("[^0-9.]+", ""));
+        }
     }
 
-    private Subscribers createNewUser(Long userTelegramId, Double bitcoinPrice) {
+    private Subscribers createNewUser(Long userTelegramId) {
 
         new Subscribers();
         return Subscribers.builder()
                 .userUUID(UUID.randomUUID())
                 .telegramUserId(userTelegramId)
-                .userSubscribedBitCoinPrice(bitcoinPrice)
+                .userSubscribedBitCoinPrice(null)
                 .build();
     }
 }
