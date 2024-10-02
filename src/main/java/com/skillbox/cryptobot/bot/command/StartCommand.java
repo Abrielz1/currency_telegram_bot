@@ -45,7 +45,7 @@ public class StartCommand implements IBotCommand {
                  
                  /subscribe[пробел][ваша желаемая цена Bitcoin] - получать стоимость биткоина в USD,
                  если вы не укажите интересующую вас стоимость BitCoin в USD,
-                 будет установлена текущая стоимость BitCoin.
+                 будет установлена текущая стоимость BitCoin. И произойдёт подписка на рассылку.
                  
                  /get_subscription Посмотреть информацию о желаемой цене на Bitcoin в USD.
                   

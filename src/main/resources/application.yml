@@ -2,14 +2,16 @@ telegram:
   bot:
 #    не вписывайте данные, так как можете отправить в публичный репозиторий
 #    используйте переменные среды для установки значений
-#    username: ${BOT_NAME}
-#    token: ${BOT_TOKEN}
-    username: currency110783bitcoinBot@Bot
-    token: 7230209037:AAEcd19Duj0gLQa-HyIS_cOqWsYjDZOrN4A
+
+    username: ${BOT_NAME}
+    token: ${BOT_TOKEN}
     notify:
       delay:
         value: 10
         unit: MINUTES
+    update:
+      value: 2
+      unit: MINUTES
 
 binance:
   api:
